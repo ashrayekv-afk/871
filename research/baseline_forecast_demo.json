@@ -1,0 +1,623 @@
+{
+  "version": "0.2.0-baseline-research-demo",
+  "status": "experimental_demo_only",
+  "target": "At least 2 of 4 fixed domains crossed at recorded follow-up relative to first scan",
+  "predictor_reference": "first scan only; no observed slope predictors",
+  "features": [
+    "age_baseline",
+    "baseline_A",
+    "baseline_B",
+    "baseline_C",
+    "baseline_BAD_D",
+    "baseline_ARTmax",
+    "baseline_Kmax",
+    "log_interval_years"
+  ],
+  "scaler_mean": [
+    39.751093569624146,
+    7.0073275862068956,
+    5.353146551724137,
+    484.1508620689655,
+    6.381853448275863,
+    224.1293103448276,
+    52.35431034482758,
+    0.14132626243880975
+  ],
+  "scaler_scale": [
+    16.079416102237662,
+    0.5729045141578564,
+    0.6249993207487391,
+    45.949171685321836,
+    3.935530625736357,
+    108.97164532910051,
+    6.3579829299998005,
+    0.8245974536196873
+  ],
+  "coef": [
+    -0.3679871299582394,
+    -0.10740109641234365,
+    -0.011423034101260759,
+    0.11923363966960444,
+    -0.05773669132709364,
+    0.0020576777865102753,
+    0.18889997024779337,
+    0.09618683800136436
+  ],
+  "intercept": -1.119909253149248,
+  "C": 0.1,
+  "training_eyes": 232,
+  "training_patients": 130,
+  "external_validation": false,
+  "population_risk_calibration": false,
+  "third_visit_validation": false,
+  "source_workbook_sha256": "60bd4895f669fa55bd4e7e37266c66a52497f250847869185dfa1424bfa882be",
+  "horizon_months": 12,
+  "source_paired_sha256": "bae1e9a572b7bdf10a1e787557c16551542bb0977df6a073c407b860b0617a8c",
+  "selection_rule": "Complete parsed adults age 18-100; interval 90 days to 5 years; no CXL-label-based relabelling.",
+  "label": "Model-estimated numerical threshold crossing at a 12-month scan",
+  "feature_stats": {
+    "age_baseline": {
+      "min": 18.853227650122864,
+      "max": 79.54441227403711,
+      "median": 34.2101480523214
+    },
+    "baseline_A": {
+      "min": 4.43,
+      "max": 8.4,
+      "median": 7.08
+    },
+    "baseline_B": {
+      "min": 3.16,
+      "max": 6.68,
+      "median": 5.385
+    },
+    "baseline_C": {
+      "min": 353.0,
+      "max": 639.0,
+      "median": 484.5
+    },
+    "baseline_BAD_D": {
+      "min": -0.6,
+      "max": 26.51,
+      "median": 5.745
+    },
+    "baseline_ARTmax": {
+      "min": 49.0,
+      "max": 609.0,
+      "median": 201.0
+    },
+    "baseline_Kmax": {
+      "min": 41.7,
+      "max": 82.8,
+      "median": 50.8
+    },
+    "log_interval_years": {
+      "min": -1.3897020100222326,
+      "max": 1.5866121776746571,
+      "median": 0.19074836553861582
+    }
+  },
+  "validation": {
+    "eyes": 232,
+    "patients": 130,
+    "events": 59,
+    "domain_counts": {
+      "0": 116,
+      "1": 57,
+      "2": 23,
+      "3": 19,
+      "4": 17
+    },
+    "interval_days": {
+      "min": 90.99999999999997,
+      "median": 442.00000000000006,
+      "max": 1785.0
+    },
+    "metrics": {
+      "candidate": {
+        "eyes": 232,
+        "events": 59,
+        "auc": 0.5775448221808563,
+        "brier": 0.18827707973214675,
+        "log_loss": 0.5633196367554829,
+        "observed_fraction": 0.2543103448275862,
+        "mean_prediction": 0.2549399006881831,
+        "calibration_intercept": -0.14298953988737206,
+        "calibration_slope": 0.8685483205707552
+      },
+      "interval_only": {
+        "eyes": 232,
+        "events": 59,
+        "auc": 0.3565200352699128,
+        "brier": 0.19066891675606515,
+        "log_loss": 0.5697413139342721,
+        "observed_fraction": 0.2543103448275862,
+        "mean_prediction": 0.25475278455190226,
+        "calibration_intercept": -18.378442156220363,
+        "calibration_slope": -16.063740822307636
+      },
+      "prevalence": {
+        "eyes": 232,
+        "events": 59,
+        "auc": 0.47506613108650925,
+        "brier": 0.1896692838997715,
+        "log_loss": 0.5671074761916796,
+        "observed_fraction": 0.2543103448275862,
+        "mean_prediction": 0.25430758901281714,
+        "calibration_intercept": -0.4990466568329735,
+        "calibration_slope": 0.5360325061189236
+      }
+    },
+    "each_repeat": {
+      "candidate": [
+        {
+          "eyes": 232,
+          "events": 59,
+          "auc": 0.5966493582835309,
+          "brier": 0.1874119890453424,
+          "log_loss": 0.5605259346079675,
+          "observed_fraction": 0.2543103448275862,
+          "mean_prediction": 0.2540765823087137,
+          "calibration_intercept": -0.07372509004761006,
+          "calibration_slope": 0.9293891371635161
+        },
+        {
+          "eyes": 232,
+          "events": 59,
+          "auc": 0.5719604193200745,
+          "brier": 0.18908767015468894,
+          "log_loss": 0.5661773794615766,
+          "observed_fraction": 0.2543103448275862,
+          "mean_prediction": 0.2546182695450891,
+          "calibration_intercept": -0.4983564337593353,
+          "calibration_slope": 0.5309627408453288
+        },
+        {
+          "eyes": 232,
+          "events": 59,
+          "auc": 0.5335554031546977,
+          "brier": 0.18991563699287387,
+          "log_loss": 0.5678758186483326,
+          "observed_fraction": 0.2543103448275862,
+          "mean_prediction": 0.2561248502107465,
+          "calibration_intercept": -0.7132911906912914,
+          "calibration_slope": 0.3385824973597561
+        }
+      ],
+      "interval_only": [
+        {
+          "eyes": 232,
+          "events": 59,
+          "auc": 0.42970510434015874,
+          "brier": 0.18999982840157406,
+          "log_loss": 0.5679877013758129,
+          "observed_fraction": 0.2543103448275862,
+          "mean_prediction": 0.25406569688057923,
+          "calibration_intercept": -12.910116097846132,
+          "calibration_slope": -10.97373498192724
+        },
+        {
+          "eyes": 232,
+          "events": 59,
+          "auc": 0.4171157049083962,
+          "brier": 0.19102900201385933,
+          "log_loss": 0.5707315240818777,
+          "observed_fraction": 0.2543103448275862,
+          "mean_prediction": 0.25545314355915066,
+          "calibration_intercept": -5.545778036171434,
+          "calibration_slope": -4.1585702263208155
+        },
+        {
+          "eyes": 232,
+          "events": 59,
+          "auc": 0.3478005290486921,
+          "brier": 0.19110400589293305,
+          "log_loss": 0.5709040651852888,
+          "observed_fraction": 0.2543103448275862,
+          "mean_prediction": 0.25473951321597693,
+          "calibration_intercept": -18.332134490713518,
+          "calibration_slope": -15.984391556439718
+        }
+      ],
+      "prevalence": [
+        {
+          "eyes": 232,
+          "events": 59,
+          "auc": 0.4897129420985598,
+          "brier": 0.18967170488521828,
+          "log_loss": 0.5671134833332809,
+          "observed_fraction": 0.2543103448275862,
+          "mean_prediction": 0.2543075890128171,
+          "calibration_intercept": -0.4990560413041049,
+          "calibration_slope": 0.5360041651146292
+        },
+        {
+          "eyes": 232,
+          "events": 59,
+          "auc": 0.4897129420985598,
+          "brier": 0.1896717048852183,
+          "log_loss": 0.5671134833332808,
+          "observed_fraction": 0.2543103448275862,
+          "mean_prediction": 0.2543075890128171,
+          "calibration_intercept": -0.4990560413041049,
+          "calibration_slope": 0.5360041651146292
+        },
+        {
+          "eyes": 232,
+          "events": 59,
+          "auc": 0.4897129420985598,
+          "brier": 0.18967170488521828,
+          "log_loss": 0.5671134833332808,
+          "observed_fraction": 0.2543103448275862,
+          "mean_prediction": 0.2543075890128171,
+          "calibration_intercept": -0.499056041304105,
+          "calibration_slope": 0.5360041651146292
+        }
+      ]
+    },
+    "bootstrap": {
+      "auc_95_percentile": [
+        0.49544820334552575,
+        0.6658304842584294
+      ],
+      "brier_improvement_over_prevalence_95_percentile": [
+        -0.0032386662463731695,
+        0.006195459563359263
+      ],
+      "note": "Patient-cluster bootstrap of fixed averaged OOF predictions; does not refit or capture all model-development uncertainty."
+    },
+    "selection": [
+      {
+        "seed": 2718,
+        "fold": 0,
+        "kind": "candidate",
+        "C": 0.1,
+        "test_eyes": 46,
+        "test_patients": 26
+      },
+      {
+        "seed": 2718,
+        "fold": 0,
+        "kind": "interval_only",
+        "C": 0.01,
+        "test_eyes": 46,
+        "test_patients": 26
+      },
+      {
+        "seed": 2718,
+        "fold": 1,
+        "kind": "candidate",
+        "C": 0.01,
+        "test_eyes": 46,
+        "test_patients": 26
+      },
+      {
+        "seed": 2718,
+        "fold": 1,
+        "kind": "interval_only",
+        "C": 0.01,
+        "test_eyes": 46,
+        "test_patients": 26
+      },
+      {
+        "seed": 2718,
+        "fold": 2,
+        "kind": "candidate",
+        "C": 0.01,
+        "test_eyes": 46,
+        "test_patients": 26
+      },
+      {
+        "seed": 2718,
+        "fold": 2,
+        "kind": "interval_only",
+        "C": 0.01,
+        "test_eyes": 46,
+        "test_patients": 26
+      },
+      {
+        "seed": 2718,
+        "fold": 3,
+        "kind": "candidate",
+        "C": 0.1,
+        "test_eyes": 47,
+        "test_patients": 26
+      },
+      {
+        "seed": 2718,
+        "fold": 3,
+        "kind": "interval_only",
+        "C": 0.01,
+        "test_eyes": 47,
+        "test_patients": 26
+      },
+      {
+        "seed": 2718,
+        "fold": 4,
+        "kind": "candidate",
+        "C": 0.01,
+        "test_eyes": 47,
+        "test_patients": 26
+      },
+      {
+        "seed": 2718,
+        "fold": 4,
+        "kind": "interval_only",
+        "C": 0.01,
+        "test_eyes": 47,
+        "test_patients": 26
+      },
+      {
+        "seed": 3141,
+        "fold": 0,
+        "kind": "candidate",
+        "C": 0.01,
+        "test_eyes": 46,
+        "test_patients": 26
+      },
+      {
+        "seed": 3141,
+        "fold": 0,
+        "kind": "interval_only",
+        "C": 0.01,
+        "test_eyes": 46,
+        "test_patients": 26
+      },
+      {
+        "seed": 3141,
+        "fold": 1,
+        "kind": "candidate",
+        "C": 0.01,
+        "test_eyes": 47,
+        "test_patients": 26
+      },
+      {
+        "seed": 3141,
+        "fold": 1,
+        "kind": "interval_only",
+        "C": 0.01,
+        "test_eyes": 47,
+        "test_patients": 26
+      },
+      {
+        "seed": 3141,
+        "fold": 2,
+        "kind": "candidate",
+        "C": 0.1,
+        "test_eyes": 46,
+        "test_patients": 26
+      },
+      {
+        "seed": 3141,
+        "fold": 2,
+        "kind": "interval_only",
+        "C": 0.01,
+        "test_eyes": 46,
+        "test_patients": 26
+      },
+      {
+        "seed": 3141,
+        "fold": 3,
+        "kind": "candidate",
+        "C": 0.01,
+        "test_eyes": 46,
+        "test_patients": 26
+      },
+      {
+        "seed": 3141,
+        "fold": 3,
+        "kind": "interval_only",
+        "C": 0.1,
+        "test_eyes": 46,
+        "test_patients": 26
+      },
+      {
+        "seed": 3141,
+        "fold": 4,
+        "kind": "candidate",
+        "C": 0.1,
+        "test_eyes": 47,
+        "test_patients": 26
+      },
+      {
+        "seed": 3141,
+        "fold": 4,
+        "kind": "interval_only",
+        "C": 0.01,
+        "test_eyes": 47,
+        "test_patients": 26
+      },
+      {
+        "seed": 1618,
+        "fold": 0,
+        "kind": "candidate",
+        "C": 0.01,
+        "test_eyes": 46,
+        "test_patients": 26
+      },
+      {
+        "seed": 1618,
+        "fold": 0,
+        "kind": "interval_only",
+        "C": 0.01,
+        "test_eyes": 46,
+        "test_patients": 26
+      },
+      {
+        "seed": 1618,
+        "fold": 1,
+        "kind": "candidate",
+        "C": 0.01,
+        "test_eyes": 46,
+        "test_patients": 26
+      },
+      {
+        "seed": 1618,
+        "fold": 1,
+        "kind": "interval_only",
+        "C": 0.01,
+        "test_eyes": 46,
+        "test_patients": 26
+      },
+      {
+        "seed": 1618,
+        "fold": 2,
+        "kind": "candidate",
+        "C": 0.01,
+        "test_eyes": 47,
+        "test_patients": 26
+      },
+      {
+        "seed": 1618,
+        "fold": 2,
+        "kind": "interval_only",
+        "C": 0.01,
+        "test_eyes": 47,
+        "test_patients": 26
+      },
+      {
+        "seed": 1618,
+        "fold": 3,
+        "kind": "candidate",
+        "C": 0.01,
+        "test_eyes": 47,
+        "test_patients": 26
+      },
+      {
+        "seed": 1618,
+        "fold": 3,
+        "kind": "interval_only",
+        "C": 0.01,
+        "test_eyes": 47,
+        "test_patients": 26
+      },
+      {
+        "seed": 1618,
+        "fold": 4,
+        "kind": "candidate",
+        "C": 0.01,
+        "test_eyes": 46,
+        "test_patients": 26
+      },
+      {
+        "seed": 1618,
+        "fold": 4,
+        "kind": "interval_only",
+        "C": 0.01,
+        "test_eyes": 46,
+        "test_patients": 26
+      }
+    ],
+    "near_six_months_held_out": {
+      "candidate": {
+        "eyes": 45,
+        "events": 13,
+        "auc": 0.5625,
+        "brier": 0.20481841490747246,
+        "log_loss": 0.5974985605548235,
+        "observed_fraction": 0.28888888888888886,
+        "mean_prediction": 0.26578822555722986,
+        "calibration_intercept": 0.17006896439619398,
+        "calibration_slope": 1.0534243732444637
+      },
+      "interval_only": {
+        "eyes": 45,
+        "events": 13,
+        "auc": 0.40865384615384615,
+        "brier": 0.20764959809111347,
+        "log_loss": 0.6068425131570813,
+        "observed_fraction": 0.28888888888888886,
+        "mean_prediction": 0.2594132000194174,
+        "calibration_intercept": -14.307134690456529,
+        "calibration_slope": -12.726897186816972
+      },
+      "prevalence": {
+        "eyes": 45,
+        "events": 13,
+        "auc": 0.5372596153846154,
+        "brier": 0.20669256092669103,
+        "log_loss": 0.6043896831903158,
+        "observed_fraction": 0.28888888888888886,
+        "mean_prediction": 0.2540910803276395,
+        "calibration_intercept": -0.4176659802001661,
+        "calibration_slope": 0.4483272223191159
+      }
+    }
+  },
+  "near_twelve_months": {
+    "window_months": [
+      9,
+      15
+    ],
+    "eyes": 45,
+    "patients": 25,
+    "events": 11,
+    "note": "Post-fit descriptive subset of held-out predictions at the actual observed intervals, not exact 12-month validation.",
+    "metrics": {
+      "candidate": {
+        "eyes": 45,
+        "events": 11,
+        "auc": 0.5989304812834224,
+        "brier": 0.18149654714504182,
+        "log_loss": 0.5472413710043492,
+        "observed_fraction": 0.24444444444444444,
+        "mean_prediction": 0.25809127901109147,
+        "calibration_intercept": 0.4718234677292476,
+        "calibration_slope": 1.5268722159909502
+      },
+      "interval_only": {
+        "eyes": 45,
+        "events": 11,
+        "auc": 0.5013368983957219,
+        "brier": 0.18497605384852903,
+        "log_loss": 0.5568972104064949,
+        "observed_fraction": 0.24444444444444444,
+        "mean_prediction": 0.2548926702279745,
+        "calibration_intercept": -29.56837363855845,
+        "calibration_slope": -26.495530705191676
+      },
+      "prevalence": {
+        "eyes": 45,
+        "events": 11,
+        "auc": 0.4144385026737968,
+        "brier": 0.18489138058988241,
+        "log_loss": 0.5566784101454725,
+        "observed_fraction": 0.24444444444444444,
+        "mean_prediction": 0.2542876209542876,
+        "calibration_intercept": -42.048692449417636,
+        "calibration_slope": -38.020274731103726
+      }
+    }
+  },
+  "calibrated_clinical_probability": false,
+  "clinical_release": false,
+  "domain_rules": [
+    {
+      "key": "anterior",
+      "label": "Anterior curvature",
+      "rule": "ARC decrease >0.106 mm OR Kmax increase >1 D"
+    },
+    {
+      "key": "posterior",
+      "label": "Posterior curvature",
+      "rule": "PRC decrease >0.085 mm"
+    },
+    {
+      "key": "pachymetric",
+      "label": "Pachymetric",
+      "rule": "Thinnest decrease >2% OR ARTmax decrease >44.24"
+    },
+    {
+      "key": "composite",
+      "label": "Composite deviation",
+      "rule": "BAD-D increase >0.42"
+    }
+  ],
+  "limitations": [
+    "Selected CXL/control cohort; sample response is not population-calibrated patient risk.",
+    "Numerical outcome is not independently adjudicated clinical progression.",
+    "Variable follow-up and incomplete treatment/quality audit; no exact first-crossing time.",
+    "Forecast assumes comparable untreated scans; no CXL treatment benefit is estimated.",
+    "Internal validation only; no external fixed-horizon validation."
+  ]
+}

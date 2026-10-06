@@ -1,0 +1,39 @@
+{
+  "target": "At least two of four fixed domains crossed at the recorded follow-up relative to the first scan",
+  "requested_target": "The same criterion six months after the latest scan",
+  "primary_eligibility": "Existing conservative complete-pair parser; age 18-50; interval 90 days to 5*365.2425 days. No exclusion based on CXL label versus domain outcome agreement.",
+  "predictors": [
+    "baseline age",
+    "baseline A",
+    "baseline B",
+    "baseline C",
+    "baseline BAD-D",
+    "baseline ARTmax",
+    "baseline Kmax",
+    "log observed interval years"
+  ],
+  "candidate": "L2 logistic regression, C selected from 0.01/0.1/1/10 by inner patient-grouped Brier loss",
+  "comparators": [
+    "training-fold prevalence",
+    "interval-only logistic"
+  ],
+  "validation": "Five patient-grouped outer folds, three patient-grouped inner folds. Both eyes remain together. Fit scaler inside training folds. Three fixed split seeds 2718, 3141, 1618; report every seed and averaged out-of-fold predictions.",
+  "sensitivity": "Same recipe in the direct 4-8 month subset; narrow 5-7 month data counted, not selected for better performance",
+  "deployment": "Research candidate only. No latest-plus-trend validation without a third scan; no proof of clinical absolute-risk calibration in an outcome-selected cohort. No training-set performance substituted for held-out performance.",
+  "frozen_before_fitting": true,
+  "v82_demo_extension": {
+    "specified_before_extension_fit": true,
+    "age_eligibility": [
+      18,
+      100
+    ],
+    "interval_days_min": 90,
+    "interval_years_max": 5,
+    "candidate": "Same ridge logistic family, candidate C values, fold-local scaling, patient grouping and three split seeds as original. No new feature search.",
+    "requested_horizon_months": 12,
+    "endpoint": "Existing joint >=2/4 numerical threshold endpoint at later scan; no onset time inference.",
+    "comparison": "Retain prevalence and interval-only comparators; report weak or negative skill.",
+    "near_horizon_audit": "9-15-month held-out subset at observed follow-up, descriptive only; not used to choose fit or tune thresholds.",
+    "release": "Experimental working demo with patient inputs. No clinical calibration or progression diagnosis claim."
+  }
+}
